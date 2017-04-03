@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-buttons left  [navPush]="settingPage">
+      <button ion-button clear color="dark">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons right>
+      <button ion-button clear color="dark" [navPush]="historyPage">
+        <ion-icon name="list-box"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+   <h3>Next Reminder</h3>
+   <h1>{{timeReminder}}</h1>
+   
+</ion-content>
+<ion-footer>
+  <button *ngIf="paused == 1" ion-button icon-left block outline (click)="changeStatus()">
+     <ion-icon name="ios-alarm-outline"></ion-icon>
+     Pause Reminders
+   </button>
+   <button *ngIf="paused == 2" ion-button icon-left block outline (click)="changeStatus()">
+     <ion-icon name="ios-alarm-outline"></ion-icon>
+     Resume Reminders
+   </button>
+   <button *ngIf="paused == 0" ion-button icon-left block outline (click)="changeStatus()">
+     <ion-icon name="ios-alarm-outline"></ion-icon>
+     No Reminders
+   </button>
+</ion-footer>

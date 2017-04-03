@@ -1,0 +1,51 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+        <ion-title>Settings</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <h2>Welcome to PT Timer</h2>
+    <p>
+        Whether you're rehabing an injury, improving your flexibility or strength, or simply need a reminder to get up and active every once in a while, I'm here to be your workout buddy!
+    </p>
+    <h4>Remind me:</h4>
+    <ion-list>
+        <ion-item-divider color="light">Remind me</ion-item-divider>        
+        <ion-item>            
+            <ion-range max="{{timeUnitSelect=='h'?24:59}}" min="{{timeUnitSelect=='h'?1:6}}" pin="true" [(ngModel)]="timeRange">
+                <ion-label range-left>Every</ion-label>
+            </ion-range>
+        </ion-item>
+        <ion-item>         
+            <ion-label></ion-label>
+            <ion-select [(ngModel)]="timeUnitSelect">
+                <ion-option value="h" selected="true">Hours</ion-option>
+                <ion-option value="m">Minutes</ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
+    <h4>Between the hours of:</h4>
+    <ion-list>
+        <ion-item>
+            <ion-label>Begin</ion-label>
+            <ion-datetime [(ngModel)]="beginTime" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label>End</ion-label>
+            <ion-datetime [(ngModel)]="endTime" displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+        </ion-item>
+    </ion-list>
+    <h4>Notifications</h4>
+    <ion-list>
+        <ion-item>
+            <ion-label>Enable notifications</ion-label>
+            <ion-toggle checked="false"></ion-toggle>
+        </ion-item>
+    </ion-list>
+    <button ion-button block (click)="startReminding()">
+        Start Reminding Me
+    </button>
+    <button *ngIf="startFromHome == 1" ion-button block (click)="back()">
+        Home Page
+    </button>
+</ion-content>

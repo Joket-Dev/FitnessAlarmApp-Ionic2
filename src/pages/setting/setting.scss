@@ -1,0 +1,24 @@
+page-setting{
+    ion-content{
+        h2{
+            letter-spacing: 1px;
+        }
+
+        p{
+            letter-spacing: 1px;
+        }
+
+        ion-list{
+            border: 0.55px solid #c8c7cc !important;
+            
+            ion-item{
+                border-top: none !important;
+                border-bottom: none !important;
+
+                .item-inner{
+                    border-bottom: none !important;
+                }
+            }
+        }
+    }
+}

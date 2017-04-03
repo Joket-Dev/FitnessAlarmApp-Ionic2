@@ -1,0 +1,32 @@
+<!--
+  Generated template for the History page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>History</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div padding>
+    <span class="header">{{donePercent}}% of reminders acknowledged</span>
+  </div>
+  <ion-list>
+    <ion-item-group *ngFor="let history of historyArray; let i = index">
+      <ion-item-divider *ngIf="i == 0 || (i > 0 && history.day != historyArray[i-1].day)">
+        {{history.day}}
+      </ion-item-divider>
+      <ion-item>
+        {{history.time}}
+        <ion-icon *ngIf="history.done == 1" name="md-checkmark" item-right></ion-icon>
+        <ion-icon *ngIf="history.done == 0" name="md-close" item-right></ion-icon>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+</ion-content>

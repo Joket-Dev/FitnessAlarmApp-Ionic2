@@ -1,0 +1,28 @@
+page-home {
+    ion-content{
+        background-color: #efefef !important;
+        h1{
+            text-align: center;
+        }
+
+        h3{
+            text-align: center;
+        }
+        .done{
+            border:1px solid blue;
+            border-radius:5px;
+            width:80%;
+            text-align:center;
+            margin:20px auto;
+            font-size:20px;
+        }
+        .danger{
+            border:1px solid red;
+            border-radius: 5px;
+            width:80%;
+            text-align:center;
+            margin:20px auto;
+            font-size:20px;
+        }
+    }
+}
